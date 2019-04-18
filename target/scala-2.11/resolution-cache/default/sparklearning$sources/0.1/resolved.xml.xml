@@ -4,7 +4,7 @@
 		module="sparklearning$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190418112805"
+		publication="20190418170451"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
