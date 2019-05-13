@@ -1,4 +1,4 @@
-package com.sx.emailClassify
+package com.sx.mllib.emailClassify
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.feature.HashingTF
