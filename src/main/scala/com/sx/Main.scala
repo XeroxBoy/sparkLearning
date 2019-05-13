@@ -1,6 +1,6 @@
 package com.sx
 import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.{SQLContext, SparkSession}
 class Main{
 
 }
@@ -11,6 +11,7 @@ object Main{
     val sqlsc = new SQLContext(sc)
     val fileName:String = this.getClass().getClassLoader().getResource("employee.json").getPath();//获取文件路径
     val dfs = sqlsc.read.json(fileName)
+    //放到集群上读的时候用广播来处理
 //    val dfs = sqlsc.read.json("/employee.json")
 //    dfs.show()
 //    dfs.show()
@@ -24,14 +25,14 @@ object Main{
     parqfile.registerTempTable("employee")
     val allRecords = sqlsc.sql("SELECT * FROM employee")
     allRecords.show()
-    //数据保存
-    //方式一
-    parqfile.write.json("E:\\111")
-    parqfile.write.parquet("E:\\222")
-    //方式二
-    parqfile.write.format("json").save("E:\\333")
-    parqfile.write.format("parquet").save("E:\\444")
-    //方式三
-    parqfile.write.save("E:\\555")
+//    //数据保存
+//    //方式一
+//    parqfile.write.json("E:\\111")
+//    parqfile.write.parquet("E:\\222")
+//    //方式二
+//    parqfile.write.format("json").save("E:\\333")
+//    parqfile.write.format("parquet").save("E:\\444")
+//    //方式三
+//    parqfile.write.save("E:\\555")
   }
 }
