@@ -21,12 +21,7 @@ object linear {
     val lr = new LinearRegressionWithSGD()
     val model = lr.run(positiveExamples)
     println("weight:%s,  intercept:%s".format(model.weights,model.intercept))
-    val negTest = tf.transform("Hi Dad,I started studying Spark the other ...".split(" "))
-    println(model.predict(negTest))
-    println(model.predict(negTest))
-    println(model.predict(negTest))
-    println(model.predict(negTest))
-    println(model.predict(negTest))
-
+    val posTest = tf.transform("O M G GET cheap stuff by sending money to ...".split(" "))
+    println(model.predict(posTest))
   }
 }
