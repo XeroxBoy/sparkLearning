@@ -48,7 +48,7 @@ class IPhead {
   var dstIp : Int = 0
 }
 class macHead{
-  var desMac : Byte = 0
-  var srcMac : Byte = 0
+  var desMac : Array[Byte] = new Array[Byte](6)
+  var srcMac : Array[Byte] = new Array[Byte](6)
   var frameType : Short = 0
 }

@@ -35,6 +35,7 @@ object email{
     val emailTest = tf.transform("性感诸葛在线发牌 澳门皇家赌场".split(" "))
     println("prediction for positive:  "+model.predict(posTest)+model.weights)
     println("prediction for negative:  "+model.predict(negTest)+model.weights)
+    println("prediction for email:  "+model.predict(emailTest)+model.weights)
   }
 
 }
