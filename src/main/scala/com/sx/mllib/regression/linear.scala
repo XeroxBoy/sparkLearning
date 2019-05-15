@@ -19,6 +19,7 @@ object linear {
     //创建LabelPoint数据集分别存放阳性和阴性邮件的例子
     val positiveExamples = spamFeatures.map(features=> LabeledPoint(1,features))
     val lr = new LinearRegressionWithSGD()
+    positiveExamples.cache()
     val model = lr.run(positiveExamples)
     println("weight:%s,  intercept:%s".format(model.weights,model.intercept))
     val posTest = tf.transform("O M G GET cheap stuff by sending money to ...".split(" "))

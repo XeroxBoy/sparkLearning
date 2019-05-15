@@ -32,8 +32,9 @@ object email{
     //以阳性和阴性例子进行测试
     val posTest = tf.transform("O M G GET cheap stuff by sending money to ...".split(" "))
     val negTest = tf.transform("Hi Dad,I started studying Spark the other ...".split(" "))
-    println("prediction for positive:  "+model.predict(posTest))
-    println("prediction for negative:  "+model.predict(negTest))
+    val emailTest = tf.transform("性感诸葛在线发牌 澳门皇家赌场".split(" "))
+    println("prediction for positive:  "+model.predict(posTest)+model.weights)
+    println("prediction for negative:  "+model.predict(negTest)+model.weights)
   }
 
 }
