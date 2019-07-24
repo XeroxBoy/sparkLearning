@@ -22,7 +22,6 @@ object sparkTest00{
     val links = sc.objectFile[(String,Seq[String])]("links").partitionBy(new HashPartitioner(100))
       .persist()
     var ranks = links.mapValues(v => 1.0)
-
     for (i <- 0 until 10){
       val contributions = links.join(ranks).flatMap {
         case (pageId,(links,rank)) =>
