@@ -9,6 +9,7 @@ out
 *.class
 *.log
 project
+target
 gen### Example user template template
 ### Example user template
 
